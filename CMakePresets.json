@@ -1,0 +1,31 @@
+{
+  "version": 5,
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "installDir": "${sourceDir}/install",
+      "generator": "Ninja",
+      "toolchainFile": "${sourceDir}/avr-toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_COMPILE_WARNING_AS_ERROR": true
+      }
+    },
+    {
+      "name": "release",
+      "inherits": [
+        "base"
+      ],
+      "displayName": "Release"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build-release",
+      "description": "",
+      "displayName": "Build Release",
+      "configurePreset": "release"
+    }
+  ]
+}

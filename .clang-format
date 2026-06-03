@@ -1,0 +1,21 @@
+BasedOnStyle: LLVM
+
+AlignAfterOpenBracket: DontAlign
+AlignConsecutiveBitFields: Consecutive
+AllowAllArgumentsOnNextLine: false
+AllowShortFunctionsOnASingleLine: None
+ColumnLimit: 120
+IndentWidth: 4
+PackConstructorInitializers: Never
+PointerAlignment: Right
+TabWidth: 4
+SortUsingDeclarations: Lexicographic
+SeparateDefinitionBlocks: Always
+BreakTemplateDeclarations: Yes
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterUnion: true
