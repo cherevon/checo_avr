@@ -38,5 +38,10 @@ target_link_libraries(${PROJECT_NAME} PRIVATE checo::avr)
 add_custom_command(
     TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_OBJCOPY} -O ihex -R .eeprom ${PROJECT_NAME}.elf ${PROJECT_NAME}.hex
-    COMMENT "Generating HEX file..."
+)
+
+# Print size of the firmware
+add_custom_command(
+    TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_SIZE} ${PROJECT_NAME}.elf
 )

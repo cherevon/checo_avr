@@ -37,16 +37,15 @@ class SoftSpi
     SoftSpi() = default;
     ~SoftSpi() = default;
 
-    void shiftOut(uint8_t value)
+    void shiftOut(uint8_t value, const uint8_t size = 8)
     {
-        // Компилятор полностью сотрет эти вызовы функций и подставит PORTB/PORTD напрямую
         volatile uint8_t &dataPort = DataPort::port();
         volatile uint8_t &clockPort = ClockPort::port();
 
         constexpr uint8_t dataMask = (1 << DataPin);
         constexpr uint8_t clockMask = (1 << ClockPin);
 
-        for (uint8_t i = 0; i < 8; i++) {
+        for (uint8_t i = 0; i < size; i++) {
             if (value & 1) {
                 dataPort |= dataMask;
             } else {
