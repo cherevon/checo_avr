@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.23)
 
-project("seven_segment_driver")
+project("seven_segment_driver" LANGUAGES CXX)
 
 # Microcontroller model and its frequency
 set(MCU "attiny13a")
@@ -30,6 +30,9 @@ add_link_options(
 add_executable(${PROJECT_NAME}
     "src/main.cpp"
 )
+
+# Target compile settings
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_20)
 
 # Link dependencies
 target_link_libraries(${PROJECT_NAME} PRIVATE checo::avr)

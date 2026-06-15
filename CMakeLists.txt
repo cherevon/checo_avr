@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.27)
 
-project("checo_avr_repo")
+project("checo_avr_repo" LANGUAGES CXX)
 
 # Add libraries listed in this repository
 add_subdirectory("lib/checo_avr")
